@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/App.css';
+import './style.css';
 import Popup from "reactjs-popup";
 
 class Post extends React.Component {
@@ -33,9 +33,9 @@ class Post extends React.Component {
             } position="bottom center" contentStyle={{width: 400, borderRadius: 25}} modal>
                 {close => (
                     <div className="popup">
-                        <a className="close" onClick={close}>
+                        <button className="close" onClick={close}>
                             &times;
-                        </a>
+                        </button>
                         <h2>Post</h2>
                         <p><b>Id:</b> {post.id}</p>
                         <p><b>Title:</b> {post.title}</p>

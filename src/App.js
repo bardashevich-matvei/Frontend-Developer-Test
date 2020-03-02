@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/App.css';
+import './style.css';
 import Post from './Post';
 
 class Main extends React.Component {
