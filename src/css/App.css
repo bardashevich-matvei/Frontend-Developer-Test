@@ -1,5 +1,5 @@
 * {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .main {
@@ -14,6 +14,7 @@
   display: flex;
   padding: 10px;
   border-radius: 10px;
+  font-size: 14px;
 }
 
 .itemHeader {
@@ -27,6 +28,7 @@
   justify-content: center;
   font-size: 24px;
   margin-bottom: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .item:hover {
@@ -36,14 +38,58 @@
 .postId {
   width: 1vw;
   text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .userId {
   width: 3vw;
   text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .title {
   width: 56vw;
   text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.popup {
+  height: 100%;
+  border-radius: 25px;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -2px;
+  top: -2px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+.close:hover {
+  border: 1px solid black;
+}
+
+h2, p {
+  font-weight: 0;
+  margin: 5px 5px 5px 10px;
+}
+
+p {
+  font-size: 17px;
 }

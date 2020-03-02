@@ -1,5 +1,6 @@
 import React from 'react';
 import './css/App.css';
+import Post from './Post';
 
 class Main extends React.Component {
   constructor(props) {
@@ -7,52 +8,50 @@ class Main extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      posts: [],
+      users: []
     };
   }
 
   async componentDidMount() {
-    let data = await fetch("https://jsonplaceholder.typicode.com/posts", {method: 'GET'});
-    data = await data.json();
+    let posts = await fetch("https://jsonplaceholder.typicode.com/posts", {method: 'GET'});
+    posts = await posts.json();
+    let users = await fetch("https://jsonplaceholder.typicode.com/users", {method: 'GET'});
+    users = await users.json();
     this.setState({
       isLoaded: true,
-      items: data
+      posts,
+      users
     });
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, posts, users } = this.state;
     if (error) {
       return <div>Ошибка: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Загрузка...</div>;
     } else {
       return (
-        <table className="main">
-          <caption className="caption">
+        <div className="main">
+          <div className="caption">
             Welcome to the Frontend Developer Test App
-          </caption>
-          <tbody>
-            <tr className="itemHeader">
-              <td className='postId'>
-                id
-              </td>
-              <td className='userId'>
-                userId
-              </td>
-              <td className='title'>
-                title
-              </td>
-            </tr>
-            {items.map(item => (
-              <tr className="item" key={item.id}>
-                <td className='postId'>{item.id}</td>
-                <td className='userId'>{item.userId}</td>
-                <td className='title'>{item.title}</td>
-              </tr>
+          </div>
+            <div className="itemHeader">
+              <div className='postId'>
+                Id
+              </div>
+              <div className='userId'>
+                UserId
+              </div>
+              <div className='title'>
+                Title
+              </div>
+            </div>
+            {posts.map(post => (
+              <Post post={post} user={users.find(x => x.id === post.userId)} key={post.id} />
             ))}
-          </tbody>
-        </table>
+        </div>
       );
     }
   }
