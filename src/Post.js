@@ -11,8 +11,6 @@ class Post extends React.Component {
       post: props.post,
       user: props.user
     };
-    console.log(props.post);
-    console.log(props.user);
   }
 
   render() {
@@ -47,7 +45,7 @@ class Post extends React.Component {
                         <p><b>Email:</b> {user.email}</p>
                         <p><b>Phone:</b> {user.phone}</p>
                         <p><b>Website:</b> {user.website}</p>
-                        <p><b>Company:</b> {user.company.name} {user.company.catchPhrase}</p>
+                        <p><b>Company:</b> {user.company.name} "{user.company.catchPhrase}"</p>
                         <p><b>Address:</b> {user.address.suite} {user.address.city} {user.address.street}</p>
                     </div>
                 )}
@@ -55,10 +53,7 @@ class Post extends React.Component {
         </div>
       );
     }
-
   }
 }
-
-
 
 export default Post;

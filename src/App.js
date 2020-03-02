@@ -49,14 +49,12 @@ class Main extends React.Component {
               </div>
             </div>
             {posts.map(post => (
-              <Post post={post} user={users.find(x => x.id === post.userId)} key={post.id} />
+              <Post post={post} user={users.find(x => x.id === post.userId)} key={post.id}/>
             ))}
         </div>
       );
     }
   }
 }
-
-
 
 export default Main;
